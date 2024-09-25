@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiruvannamalai District Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      
+/* Styling the restaurant section */
+        .restaurant-container, .temple-container {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+
+        .restaurant-box, .temple-box {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .restaurant-image img, .temple-image img {
+            width: 150px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .restaurant-info, .temple-info {
+            flex-grow: 1;
+        }
+
+        .restaurant-name, .temple-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .restaurant-address, .restaurant-contact, .temple-address {
+            margin-bottom: 5px;
+        }
+       
+
+
+        }
+
+        .establishment-type {
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .hide {
+            display: none;
+        }
+
+
+        /* Additional styles for temples */
+        .temple-image {
+            width: 150px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        /* Styling the supermarket section */
+        .supermarket-container {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        .supermarket-box {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .supermarket-image img {
+            width: 150px;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .supermarket-info {
+            flex-grow: 1;
+        }
+
+        .shop-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .supermarket-place, .supermarket-hours {
+            margin-bottom: 5px;
+        }
+
+        .hide {
+            display: none;
+        }
+        
+/* Additional styles for Jewellery Shops */
+.jewellery-container {
+    margin-top: 20px;
+}
+
+.jewellery-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 0;
+}
+
+.jewellery-box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.jewellery-image img {
+    width: 150px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 0;
+    object-fit: cover; /* Ensure the image covers the area properly */
+}
+
+.jewellery-image {
+    min-width: 150px; /* Ensures the container is always wide enough */
+    white-space: nowrap; /* Prevents the alt text from breaking into two lines */
+}
+
+.jewellery-info {
+    flex-grow: 1;
+}
+
+.shop-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.shop-address, .shop-hours, .shop-phone {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.shop-hours {
+    font-style: italic;
+}
+
+.shop-phone {
+    font-weight: bold;
+}
+
+.map-link {
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.map-link:hover {
+    color: #0056b3;
+}
+
+/* Styling for Dress Shops Section */
+.dress-shop-container {
+    display: flex;
+    flex-direction: column; 
+    margin: 20px;
+}
+
+.dress-shop-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.dress-shop-image img {
+    width: 150px; /* Adjust the width as needed */
+    height: 100px;
+    margin-right: 10px; /* Space between image and text */
+    object-fit: cover; /* Ensure the image covers the area properly */
+}
+
+.dress-shop-image {
+    min-width: 150px; /* Ensures the container is always wide enough */
+    white-space: nowrap; /* Prevents the alt text from breaking into two lines */
+}
+
+.dress-shop-info {
+    flex-grow: 1;
+}
+
+.dress-shop-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.dress-shop-address, .dress-shop-hours {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.map-link {
+    margin-top: 10px;
+}
+
+/* Additional hover effect for dress shop */
+.dress-shop-box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+       /* Styling for Electronics and Furniture Shops Section */
+#electronics-furniture {
+    padding: 30px;
+}
+
+
+.shop {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 0 ;
+}
+
+.shop img {
+    width: 150px; /* Adjust the width as needed */
+    height: 100px;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.shop-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.shop-address,
+.shop-hours,
+.map-link {
+    margin-bottom: 0;
+}
+
+.map-link a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.shop:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#discover-section {
+    background-color: black; /* Keep the background black */
+    padding: 10px; /* Adjust padding if needed */
+    text-align: center;
+}
+     
+
+#discover-section h1, #discover-section p {
+    color: white; /* Bright white for both lines */
+    font-weight: bold; /* Optional: Make the text bolder */
+   
+}
+        }
+
+        /* Typing effect */
+        #typing-effect {
+            font-size: 18px;
+            color: white; /* White text */
+            margin-top: 20px;
+        }
+
+
+         /* Centering the search bar */
+        #discover input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            text-align: left;
+            width: 300px;
+            border-radius: 5px;
+            margin-top: 1.5em; /* This adds 1.5 space above the search bar */
+        }
+            
+        }
+
+        #discover span {
+            font-size: 16px; /* Font size for 'Search' word */
+            color: white; /* White color for the 'Search' word */
+            margin-left: 10px;
+        }
+
+        /* Aligning search bar to center */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+        }
+
+
+    </style>
+      
+      
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#temples">Temples</a></li>
+                <li><a href="#supermarkets">Supermarkets</a></li>
+                 <li><a href="#dress-shops">Dress Shops</a></li>
+                <li><a href="#jewellery-shops">Jewellery Shops</a></li>
+               
+                <li><a href="#electronics-furniture">Electronics & Furniture</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Homepage Section -->
+   
+     <div id="discover">
+        <h1>Discover Tiruvannamalai</h1>
+        <div id="typing-effect"></div> <!-- Typing effect div -->
+        <input type="text" placeholder="Search..."> <span style="color: blue;">Search</span>
+    </div>
+
+    <script>
+        const typingEffect = document.getElementById("typing-effect");
+        const text = "Your One-Stop Guide to the Finest Restaurants, Temples, Supermarkets, and More!";
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingEffect.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100); // Adjust speed here
+            }
+        }
+
+        type(); // Start typing effect
+    </script>
+    
+    
+    <!-- Restaurants Section -->
+    <section id="restaurants">
+        <h2>Restaurants in Tiruvannamalai</h2>
+        <div class="restaurant-container">
+            <!-- Restaurant 1 -->
+            <div class="restaurant-box">
+                <div class="restaurant-image">
+                    <img src="images/topi-vappa.jpg" alt="restaurant image">
+                     
+                </div>
+                <div class="restaurant-info">
+                    <div class="restaurant-name">Topi Vappa Biriyani</div>
+                    <div class="restaurant-address">Address: Avalurpettai Rd, Mathalangulam, Tiruvannamalai, Tamil Nadu</div>
+                    <div class="restaurant-contact">Phone: 9092181999</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Restaurant 2 -->
+            <div class="restaurant-box">
+                <div class="restaurant-image">
+                    <img src="images/auro-usha.jpg" alt="restaurant image">
+                </div>
+                <div class="restaurant-info">
+                    <div class="restaurant-name">Auro Usha Restaurant</div>
+                    <div class="restaurant-address">Address: Chengam Rd, Girivalam Rd, Tiruvannamalai</div>
+                    <div class="restaurant-contact">Phone: 9790413052</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Restaurant 3 -->
+            <div class="restaurant-box">
+                <div class="restaurant-image">
+                    <img src="images/ananda-ramna.jpg" alt="restaurant image">
+                </div>
+                <div class="restaurant-info">
+                    <div class="restaurant-name">Ananda Ramna Restaurant</div>
+                    <div class="restaurant-address">Address: Chengam Rd, Tamarai Nagar, Tiruvannamalai</div>
+                    <div class="restaurant-contact">Phone: 7094466555</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Restaurant 4 -->
+            <div class="restaurant-box">
+                <div class="restaurant-image">
+                    <img src="images/darling-namma.jpg" alt="restaurant image">
+                </div>
+                <div class="restaurant-info">
+                    <div class="restaurant-name">Darling Namma Veedu</div>
+                    <div class="restaurant-address">Address: Vengikal, Tiruvannamalai</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Restaurant 5 -->
+            <div class="restaurant-box">
+                <div class="restaurant-image">
+                    <img src="images/dreaming-tree.jpg" alt="restaurant image">
+                </div>
+                <div class="restaurant-info">
+                    <div class="restaurant-name">Dreaming Tree Restaurant</div>
+                    <div class="restaurant-address">Address: Chengam Rd, VIP Garden, Tiruvannamalai</div>
+                    <div class="restaurant-contact">Phone: 9585946599</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Hidden Restaurants for Show More -->
+            <div class="hide" id="moreRestaurants">
+                <!-- Restaurant 6 -->
+                <div class="restaurant-box">
+                    <div class="restaurant-image">
+                        <img src="images/hotel-guru.jpg" alt="restaurant image">
+                    </div>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">Hotel Guru Bhavan</div>
+                        <div class="restaurant-address">Address: 315c, Selva Nagar, Vengikal, Tiruvannamalai</div>
+                        <div class="restaurant-contact">Phone: 9894194152</div>
+                        <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 7 -->
+                <div class="restaurant-box">
+                    <div class="restaurant-image">
+                        <img src="images/sr-adhil.jpg" alt="restaurant image">
+                    </div>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">S.R Adhil Biriyani</div>
+                        <div class="restaurant-address">Address: Ellukuttai Street, Ganeshpuram, Tiruvannamalai</div>
+                        <div class="restaurant-contact">Phone: 9994435110</div>
+                        <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 8 -->
+                <div class="restaurant-box">
+                    <div class="restaurant-image">
+                        <img src="images/tasty-cafe.jpg" alt="restaurant image">
+                    </div>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">Tasty Cafe</div>
+                        <div class="restaurant-address">Address: Tamarai Nagar, Tiruvannamalai</div>
+                        <div class="restaurant-contact">Phone: 9361048724</div>
+                        <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 9 -->
+                <div class="restaurant-box">
+                    <div class="restaurant-image">
+                        <img src="images/a-one.jpg" alt="restaurant image">
+                    </div>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">A One Restaurant</div>
+                        <div class="restaurant-address">Address: 10 Street, Mariamman Kovil St, Opposite Agr Mahal, Tiruvannamalai</div>
+                        <div class="restaurant-contact">Phone: 8489072993</div>
+                        <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 10 -->
+                <div class="restaurant-box">
+                    <div class="restaurant-image">
+                        <img src="images/jungle-forest.jpg" alt="restaurant image">
+                    </div>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">Jungle Forest Restaurant</div>
+                        <div class="restaurant-address">Address: Indira Nagar, Vengikal, Tiruvannamalai</div>
+                        <div class="restaurant-contact">Phone: 9884488091</div>
+                        <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 11 -->
+                <div class="restaurant-box">
+                    <div class="restaurant-image">
+                        <img src="images/aliffa-biriyani.jpg" alt="restaurant image">
+                    </div>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">Aliffa Biriyani</div>
+                        <div class="restaurant-address">Address: Tirukovilur Rd, Tiruvennanallur, Tiruvannamalai</div>
+                        <div class="restaurant-contact">Phone: 9688596699</div>
+                        <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 12 -->
+                <div class="restaurant-box">
+                    <div class="restaurant-image">
+                        <img src="images/bankura-cafe.jpg" alt="restaurant image">
+                    </div>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">Bankura Cafe</div>
+                        <div class="restaurant-address">Address: Murugan Kovil, Paravai, Tiruvannamalai</div>
+                        <div class="restaurant-contact">Phone: 9865018585</div>
+                        <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 13 -->
+                <div class="restaurant-box">
+                    <div class="restaurant-image">
+                        <img src="images/saravanan-biriyani.jpg" alt="restaurant image">
+                    </div>
+                    <div class="restaurant-info">
+                        <div class="restaurant-name">Saravanan Biriyani</div>
+                        <div class="restaurant-address">Address: Naidupuram, Tiruvannamalai</div>
+                        <div class="restaurant-contact">Phone: 8056206269</div>
+                        <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+            </div>
+             <!-- Restaurant 14 -->
+            <div class="restaurant-box">
+                <div class="restaurant-image">
+                    <img src="images/aakash-hotel.jpg" alt="restaurant image">
+                </div>
+                <div class="restaurant-info">
+                    <div class="restaurant-name">Aakash Hotel</div>
+                    <div class="restaurant-address">Address: 9-H Polur Rd, Opposite to Bus Station, Tiruvannamalai</div>
+                    <div class="restaurant-contact">Phone: 04175252151</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 15 -->
+            <div class="restaurant-box">
+                <div class="restaurant-image">
+                    <img src="images/roundtana-star.jpg" alt="restaurant image">
+                </div>
+                <div class="restaurant-info">
+                    <div class="restaurant-name">Roundtana Star Biriyani</div>
+                    <div class="restaurant-address">Address: Chengam Rd, Thiruvannamalai</div>
+                    <div class="restaurant-contact">Phone: 9445203965</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <button onclick="showMore('moreRestaurants')">Show More</button>
+        </div>
+    </section>
+
+    <!-- Temples Section -->
+    <section id="temples">
+        <h2>Temples in Tiruvannamalai</h2>
+        <div class="temple-container">
+            <!-- Temple 1 -->
+            <div class="temple-box">
+                <div class="temple-image">
+                    <img src="images/arunachaleswarar.jpg" alt="Arunachaleswarar Temple">
+                </div>
+                <div class="temple-info">
+                    <div class="temple-name">Arunachaleswarar Temple</div>
+                    <div class="temple-address">Address: Tiruvannamalai, Tamil Nadu</div>
+                    <div class="map-link"><a href="https://www.google.com/maps?q=Arunachaleswarar+Temple,+Tiruvannamalai" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Temple 2 -->
+            <div class="temple-box">
+                <div class="temple-image">
+                    <img src="images/bootha-narayan.jpg" alt="Bootha Narayan Swami Temple">
+                </div>
+                <div class="temple-info">
+                    <div class="temple-name">Bootha Narayan Swami Temple</div>
+                    <div class="temple-address">Address: Pavazhakundur, Tiruvannamalai</div>
+                    <div class="map-link"><a href=https://www.google.com/maps/place/Bootha+Narayana+Sami+Temple/@12.2336385,79.0679722,17z/data=!3m1!4b1!4m6!3m5!1s0x3bacc08ed423352d:0xd4f73f33b8839adf!8m2!3d12.2336385!4d79.0705471!16s%2Fg%2F1tdb2q8x?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D>View on Map</a></div>
+                </div>
+            </div>
+            
+            <!-- Temple 3 -->
+            <div class="temple-box">
+                <div class="temple-image">
+                    <img src="images/Thiru Ner Annamalai.jpg" alt="Thiru Ner Annamalai Temple">
+                </div>
+                <div class="temple-info">
+                    <div class="temple-name">Thiru Ner Annamalai Temple</div>
+                    <div class="temple-address">Address: Athiyandhal</div>
+                    <div class="map-link"><a href=https://www.google.com/maps/place/Thiru+Ner+Annamalai+Temple/@12.2381851,79.0271168,17z/data=!3m1!4b1!4m6!3m5!1s0x3bacc01799e4cb53:0x9d56c6bd8d6ee11d!8m2!3d12.2381851!4d79.0317302!16s%2Fg%2F1wk4bhvv?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D>View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Temple 4 -->
+            <div class="temple-box">
+                <div class="temple-image">
+                    <img src="images/sri-subramanya.jpg" alt="Sri Subramanya Temple">
+                </div>
+                <div class="temple-info">
+                    <div class="temple-name">Sri Subramanya Temple</div>
+                    <div class="temple-address">Address: Tiruvannamalai, Tamil Nadu</div>
+                    <div class="map-link"><a href="https://www.google.com/maps?q=Sri+Subramanya+Temple,+Tiruvannamalai" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Temple 5 -->
+            <div class="temple-box">
+                <div class="temple-image">
+                    <img src="images/Idukku Pillaiyar.jpg" alt="Idukku Pillaiyar Temple">
+                </div>
+                <div class="temple-info">
+                    <div class="temple-name">Idukku Pillaiyar Temple  </div>
+                    <div class="temple-address">Address: Vengikal</div>
+                    <div class="map-link"><a href=https://www.google.com/maps/search/Idukku+Pillaiyar+Temple++-+%09Vengikkal/@12.2529074,79.0619227,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D>View on Map</a></div>
+                </div>
+            </div>
+
+            <!-- Hidden Temples for Show More -->
+            <div class="hide" id="moreTemples">
+                <!-- Temple 6 -->
+                <div class="temple-box">
+                    <div class="temple-image">
+                        <img src="images/sri-ganesha.jpg" alt="Sri Ganesha Temple">
+                    </div>
+                    <div class="temple-info">
+                        <div class="temple-name">Sri Ganesha Temple</div>
+                        <div class="temple-address">Address: Tiruvannamalai, Tamil Nadu</div>
+                        <div class="map-link"><a href="https://www.google.com/maps/place/Shri+Ganesha+Temple/@12.2270512,79.0266155,14z/data=!4m10!1m2!2m1!1sSri+Ganesha+Temple+Tiruvannamalai,+Tamil+Nadu!3m6!1s0x3bacc1409a8150ad:0x6afeface8adb8f35!8m2!3d12.2270512!4d79.0626644!15sCi1TcmkgR2FuZXNoYSBUZW1wbGUgVGlydXZhbm5hbWFsYWksIFRhbWlsIE5hZHVaLiIsc3JpIGdhbmVzaGEgdGVtcGxlIHRpcnV2YW5uYW1hbGFpIHRhbWlsIG5hZHWSAQxoaW5kdV90ZW1wbGWaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTnljVGRmT1RkQlJSQULgAQA!16s%2Fg%2F11qhf8bwx4?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Temple 7 -->
+                <div class="temple-box">
+                    <div class="temple-image">
+                        <img src="images/sri-siva.jpg" alt="Sri Siva Temple">
+                    </div>
+                    <div class="temple-info">
+                        <div class="temple-name">Sri Siva Temple</div>
+                        <div class="temple-address">Tiruvannamalai, Tamil Nadu</div>Address: 
+                        <div class="map-link"><a href="https://www.google.com/maps/place/Cameta+sriperiyanayaki+periyantavar+Sri+Sri+Shiva+Temple/@12.2449756,78.7820865,11z/data=!4m10!1m2!2m1!1sSri+Siva+Temple+Tiruvannamalai,+Tamil+Nadu!3m6!1s0x3bacc08b50d97295:0x637112c1772e4a87!8m2!3d12.2449756!4d79.0704776!15sCipTcmkgU2l2YSBUZW1wbGUgVGlydXZhbm5hbWFsYWksIFRhbWlsIE5hZHVaKyIpc3JpIHNpdmEgdGVtcGxlIHRpcnV2YW5uYW1hbGFpIHRhbWlsIG5hZHWSAQxoaW5kdV90ZW1wbGWaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTktNeTFmV2tkM0VBReABAA!16s%2Fg%2F11cmt46cld?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Temple 8 -->
+                <div class="temple-box">
+                    <div class="temple-image">
+                        <img src="images/sri-lakshmi.jpg" alt="Sri Lakshmi Temple">
+                    </div>
+                    <div class="temple-info">
+                        <div class="temple-name">Sri Lakshmi Temple</div>
+                        <div class="temple-address">Address: Tiruvannamalai, Tamil Nadu</div>
+                        <div class="map-link"><a href="https://www.google.com/maps?q=Sri+Lakshmi+Temple,+Tiruvannamalai" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Temple 9 -->
+                <div class="temple-box">
+                    <div class="temple-image">
+                        <img src="images/sri-rama.jpg" alt="Sri Rama Temple">
+                    </div>
+                    <div class="temple-info">
+                        <div class="temple-name">Sri Rama Temple</div>
+                        <div class="temple-address">Address: Tiruvannamalai, Tamil Nadu</div>
+                        <div class="map-link"><a href="https://www.google.com/maps?q=Sri+Rama+Temple,+Tiruvannamalai" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Temple 10 -->
+                <div class="temple-box">
+                    <div class="temple-image">
+                        <img src="images/sri-krishna.jpg" alt="Sri Krishna Temple">
+                    </div>
+                    <div class="temple-info">
+                        <div class="temple-name">Sri Krishna Temple</div>
+                        <div class="temple-address">Address: Tiruvannamalai, Tamil Nadu</div>
+                        <div class="map-link"><a href="https://www.google.com/maps/search/Sri+Krishna+Temple+Tiruvannamalai,+Tamil+Nadu/@12.2271638,79.0071558,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Temple 11 -->
+                <div class="temple-box">
+                    <div class="temple-image">
+                        <img src="images/sri-ram.jpg" alt="Sri Ram Temple">
+                    </div>
+                    <div class="temple-info">
+                        <div class="temple-name">Sri Ram Temple</div>
+                        <div class="temple-address">Address: Tiruvannamalai, Tamil Nadu</div>
+                        <div class="map-link"><a href="https://www.google.com/maps?q=Sri+Ram+Temple,+Tiruvannamalai" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+
+                <!-- Temple 12 -->
+                <div class="temple-box">
+                    <div class="temple-image">
+                        <img src="images/sri-vishnu.jpg" alt="Sri Vishnu Temple">
+                    </div>
+                    <div class="temple-info">
+                        <div class="temple-name">Sri Vishnu Temple</div>
+                        <div class="temple-address">Address: Tiruvannamalai, Tamil Nadu</div>
+                        <div class="map-link"><a href="https://www.google.com/maps/search/Sri+Vishnu+Temple+Tiruvannamalai,+Tamil+Nadu/@12.2271699,79.0071558,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="showMore('moreTemples')">Show More</button>
+        </div>
+    </section>
+    
+      <!-- Supermarkets Section -->
+       <section id="supermarkets">
+        <h2>Supermarkets in Tiruvannamalai</h2>
+        <div class="supermarket-container">
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/sri-kumar-supermarket.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Sri Kumar's Supermarket</div>
+                    <div class="supermarket-place">Address: Car St, Pavazhkundur, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 9AM-9PM</div>
+             <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/more-supermarket-vengikal.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">More Supermarket</div>
+                    <div class="supermarket-place">Address: Polur Rd, Vengikal, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 7AM-9PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/more-supermarket-mathalangulam.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">More Supermarket</div>
+                    <div class="supermarket-place">Address: 63QF+25M, Mathalangulam, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 6AM-10:30PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/gsm-supermarket.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">GSM Supermarket</div>
+                    <div class="supermarket-place">Address: 63HG+XPG, Turab Ali St, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 8:30AM-10PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+       
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/dhanapal-stores.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Dhanapal Stores</div>
+                    <div class="supermarket-place">Address: 52/2, Potharaja St, Pavazhkundur, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 8AM-10PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+          
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/ravla-shopping-mall.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Ravla Shopping Mall</div>
+                    <div class="supermarket-place">Address: 108/90, Big St, near Gandhi Statue, Pavazhkundur, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 8:30AM-10PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/poombukar-supermarket.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Poombukar Supermarket</div>
+                    <div class="supermarket-place">Address: 1462/168, Vellore Main Rd, Vengikal, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 9:30AM-10:30PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/thiru-arunai-supermarket.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Thiru Arunai Supermarket</div>
+                    <div class="supermarket-place">Address: D14/111, Kattabomman St, Tiruvennanallur, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 7AM-9:30PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/sri-ramana-supermarket.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Sri Ramana Supermarket</div>
+                    <div class="supermarket-place">Address: 75/3 Chengam Rd, TSR Nagar, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 8:30AM-9PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/nilgiris-supermarket.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Nilgiris Supermarket</div>
+                    <div class="supermarket-place">Address:  79/1, Chengam Rd, near Ramana Ashramam, Thamarai Nagar</div>
+                    <div class="supermarket-hours">Hours: 7AM-9:30PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/sumangali-super-market.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Sumangali Super Market</div>
+                    <div class="supermarket-place">Address:  6385+W73, Thamarai Nagar, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 7:30AM-9PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+
+            <div class="supermarket-box">
+                <div class="supermarket-image">
+                    <img src="path-to-image/sangeetha-supermarket.jpg" alt="supermarket image">
+                </div>
+                <div class="supermarket-info">
+                    <div class="shop-name">Sangeetha Supermarket</div>
+                    <div class="supermarket-place">Address: 4/16, Amman Kovil St, near Kallukuzhi, Tiruvannamalai</div>
+                    <div class="supermarket-hours">Hours: 7AM-9PM</div>
+                    <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+ <!-- Dress Shops Section -->
+<section id="dress-shops">
+    <h2>Dress Shops in Tiruvannamalai</h2>
+    <div class="dress-shop-container">
+       
+      
+        <!-- Shop 1: Trends -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/trends.jpg" alt="   Shop    image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Trends</div>
+                <div class="shop-address">Address: No.1554/257-A, Polur Main Road, Thendral Nagar, Corporate Bank Opp., Nehru Nagar, Tiruvannamalai, Tamil Nadu 606604</div>
+                <div class="shop-hours">Hours: 11:00am - 9:30pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 2: Guru Fashion World -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/guru-fashion.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Guru Fashion World</div>
+                <div class="shop-address">Address: 84, Mathalangulam, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:00am - 9:00pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 3: Poompukar -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/poompukar.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Poompukar</div>
+                <div class="shop-address">Address: 55, Car St, opp. to Town Police Station, Tiruvennanallur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:30am - 9:30pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 4: Pachaiyappas Silks -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/pachaiyappas.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Pachaiyappas Silks</div>
+                <div class="shop-address">Address: 9, Polur Rd, opp. to Bus Stand, Chettikulam, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 8:30am - 9:30pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 5: Ponrajans Pattumahal -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/ponrajans.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Ponrajans Pattumahal</div>
+                <div class="shop-address">Address: 7&8, Car St, Tiruvennanallur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:00am - 10:00pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+
+        <!-- Shop 6: Basics Life -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/basics-life.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Basics Life</div>
+                <div class="shop-address">Address: Plot No/Door No : 1541, R.K Towers, Polur Rd, Thendral Nagar, Vengikkal, Tiruvannamalai, Annamalai R.F., Tamil Nadu 606604</div>
+                <div class="shop-hours">Hours: 10:00am - 9:30pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 7: Magnet Clothings -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/magnet.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Magnet Clothings</div>
+                <div class="shop-address">Address: No-336, Devaraj Indhirani Valagam Vellore Main Road, Kumaran Mahal, opp. Vengikkal, Tiruvannamalai, Tamil Nadu 606604</div>
+                <div class="shop-hours">Hours: 9:00am - 10:00pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 8: KRB Fashions and Boutique -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/krb-fashions.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">KRB Fashions and Boutique</div>
+                <div class="shop-address">Address: 1553/118, Thendral Nagar, Tiruvannamalai, Annamalai R.F., Tamil Nadu 606604</div>
+                <div class="shop-hours">Hours: 9:00am - 9:00pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 9: The Raymond Shop -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/raymond.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">The Raymond Shop</div>
+                <div class="shop-address">Address: Periya Anjaneyar Temple Complex, 45, Chinnakadai St, Pavazhakundur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 10:30am - 9:30pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 10: Peter England Menswear -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/peter-england.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Peter England Menswear</div>
+                <div class="shop-address">Address: 32, Polur Rd, opp. Ramakrishanaan Hotel, Vengikkal, Tiruvannamalai, Annamalai R.F., Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:30am - 9:30pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <!-- Shop 11: Ramraj Cotton -->
+        <div class="dress-shop-box">
+            <div class="dress-shop-image">
+                <img src="images/ramraj-cotton.jpg" alt="Shop image">
+            </div>
+            <div class="dress-shop-info">
+                <div class="shop-name">Ramraj Cotton</div>
+                <div class="shop-address">Address: 24A, Kosamada St, near SBI Bank, Gandhi Silai, Town, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:00am - 10:00pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+            </div>
+        </section>
+
+  
+  
+    <!-- Jewellery Shops Section -->
+    <section id="jewellery-shops" class="jewellery-container">
+        <h2>Jewellery Shops</h2>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/grt-jewellers-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">GRT Jewellers</div>
+                <div class="shop-address">Address: 27, Thiruvoodal St, opposite Oya Madam, Pavazhakundur, Tiruvannamalai, Annamalai R.F., Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:30 am–9 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/kalyan-jewellers-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">Kalyan Jewellers India Limited</div>
+                <div class="shop-address">Address: 48/252, Thiruvoodal St, near karpaga vinayagar kovil, Tiruvennanallur, Tiruvannamalai, Annamalai R.F., Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:30 am–9 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/sumangali-jewellers-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">Sumangali Jewellers</div>
+                <div class="shop-address">Address: 15, Thiruvoodal St, Pavazhakundur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:30 am–9 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/shanthi-swarna-mahal-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">Shanthi Swarna Mahal</div>
+                <div class="shop-address">Address: 28, Thiruvoodal St, opp. to OYA Madam, next to GRT jewellers, Pavazhakundur, Tiruvannamalai, Annamalai R.F., Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9 am–8:45 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/tanishq-jewellery-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">Tanishq Jewellery</div>
+                <div class="shop-address">Address: 68, Thiruvoodal St, Pavazhakundur, Tiruvannamalai, Annamalai R.F., Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:30 am–9 pm</div>
+               <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/sayar-jewellers-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">Sayar Jewellers</div>
+                <div class="shop-address">Address: No: 376/120, Car St, Tiruvennanallur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9 am–9 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/sri-krishna-jewellers-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">Sri Krishna Jewellers</div>
+                <div class="shop-address">Address: 29/22, Kadambrayan St, Tiruvennanallur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9 am–8:30 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/kamadhenu-jewellers-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">Kamadhenu Jewellers</div>
+                <div class="shop-address">Address: 92/93, Car St, Tiruvennanallur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9 am–9 pm</div>
+               <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/cs-lakshmi-jewellers-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">C.S Lakshmi Jewellers</div>
+                <div class="shop-address">Address: 63HC+W6J, SH 9A, Tiruvennanallur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:05 am–9:05 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/grs-jewellers-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">GRS Jewellers</div>
+                <div class="shop-address">Address: 324, Jothi Market, Car St, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:00 am–9:00 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+
+        <div class="jewellery-box">
+            <div class="jewellery-image">
+                <img src="path/to/grs-gold-house-image.jpg" alt="Shop image">
+            </div>
+            <div class="jewellery-info">
+                <div class="shop-name">GRS Gold House</div>
+                <div class="shop-address">Address: 130, Thiruvoodal St, Pavazhakundur, Tiruvannamalai, Tamil Nadu 606601</div>
+                <div class="shop-hours">Hours: 9:30 am–9:30 pm</div>
+                <div class="map-link"><a href="https://goo.gl/maps/example" target="_blank">View on Map</a></div>
+            </div>
+        </div>
+   
+    </section>
+
+   
+    <!-- Electronics & Furniture Section -->
+   <section id="electronics-furniture">
+  <h2>Electronics and Furniture Shops</h2>
+
+  <!-- Darling Retail - Electronics, Mobile & Furniture Shop -->
+  <div class="shop">
+    <img src="path_to_image/darling-retail.jpg" alt="Darling Retail Shop">
+    <div class="shop-info">
+      <h3 class="shop-name">Darling Retail - Electronics, Mobile & Furniture Shop</h3>
+      <p class="shop-address"><strong>Address:</strong> Building, 15A, R.R, 72, Polur Rd, Tiruvannamalai, Tamil Nadu 606601</p>
+      <p class="shop-hours"><strong>Hours:</strong> 9:30 am–9 pm</p>
+      <p class="map-link"><a href="https://www.google.com/maps/search/Darling+Retail+-+Electronics,+Mobile+%26+Furniture+Shop.+Address:+Building,+15A,+R.R,+72,+Polur+Rd,+Tiruvannamalai,+Tamil+Nadu+606601/@12.2356695,79.0596014,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+    </div>
+  </div>
+
+  <!-- Mallika Furniture and Electronics LLP -->
+  <div class="shop">
+    <img src="path_to_image/mallika-furniture-electronics.jpg" alt="Mallika Furniture and Electronics LLP">
+    <div class="shop-info">
+      <h3 class="shop-name">Mallika Furniture and Electronics LLP</h3>
+      <p class="shop-address"><strong>Address:</strong> 36/A, Lakshmipuram, Main Road Gandhi Nagar, By Pass Road, Tamil Nadu 606601</p>
+      <p class="shop-hours"><strong>Hours:</strong> 9:30 am–9 pm</p>
+      <p class="map-link"><a href="https://www.google.com/maps/place/Mallika+Furniture+and+Electronics+LLP+-+Tiruvannamalai/@12.2344261,79.0752408,17z/data=!3m1!4b1!4m6!3m5!1s0x3bacc091ba9cfd01:0x39d8fdd84c8c50e5!8m2!3d12.2344261!4d79.0778157!16s%2Fg%2F11btv68kpw?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+    </div>
+  </div>
+
+  <!-- Siva Electronics And Furniture -->
+  <div class="shop">
+    <img src="path_to_image/siva-electronics.jpg" alt="Siva Electronics And Furniture">
+    <div class="shop-info">
+      <h3 class="shop-name">Siva Electronics And Furniture</h3>
+      <p class="shop-address"><strong>Address:</strong> No:1598/A, Ashok Nagar, Vengikkal, Tiruvannamalai, Tamil Nadu 606604</p>
+      <p class="shop-hours"><strong>Hours:</strong> Open 24 hours</p>
+      <p class="map-link"><a href="https://www.google.com/maps/place/Siva+Electronics+And+Furniture/@12.2570319,79.066506,17z/data=!3m1!4b1!4m6!3m5!1s0x3bacc1bf0154f5bb:0x4de27dc3872f80e1!8m2!3d12.2570319!4d79.0690809!16s%2Fg%2F11ts42bbxc?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+    </div>
+  </div>
+
+  <!-- Siva Electronics And Furniture Vessels -->
+  <div class="shop">
+    <img src="path_to_image/siva-electronics-vessels.jpg" alt="Siva Electronics And Furniture Vessels">
+    <div class="shop-info">
+      <h3 class="shop-name">Siva Electronics And Furniture Vessels</h3>
+      <p class="shop-address"><strong>Address:</strong> 16, Polur Rd, Pavazhakundur, Tiruvannamalai, Tamil Nadu 606601</p>
+      <p class="shop-hours"><strong>Hours:</strong> 9:00 am–9:00 pm</p>
+      <p class="map-link"><a href="https://www.google.com/maps/place/SHIVA+ELECTRONICS+FURNITURE+VESSELS/@12.2422192,79.0699601,17z/data=!3m1!4b1!4m6!3m5!1s0x3bacc0f31f516e45:0x9f0713dfd232a546!8m2!3d12.2422192!4d79.072535!16s%2Fg%2F11f__6bj59?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+    </div>
+  </div>
+
+  <!-- Sathya Agencies Electronics and HomeAppliances Store -->
+  <div class="shop">
+    <img src="path_to_image/sathya-agencies.jpg" alt="Sathya Agencies Electronics and HomeAppliances Store">
+    <div class="shop-info">
+      <h3 class="shop-name">Sathya Agencies Electronics and HomeAppliances Store</h3>
+      <p class="shop-address"><strong>Address:</strong> No.4B, 2, Durgai Amman Koil St, Pavazhakundur, Tiruvannamalai, Tamil Nadu 606601</p>
+      <p class="shop-hours"><strong>Hours:</strong> 10:00 am–10:00 pm</p>
+      <p class="map-link"><a href="https://www.google.com/maps/search/Sathya+Agencies+Electronics+and+HomeAppliances+Store.+Address:+No.4B,+2,+Durgai+Amman+Koil+St,+Pavazhakundur,+Tiruvannamalai,+Tamil+Nadu+606601/@12.242219,79.0622352,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+    </div>
+  </div>
+ <!-- SR Furniture World -->
+  <div class="shop">
+    <img src="sr_furniture.jpg" alt="SR Furniture World">
+    <div class="shop-info">
+      <h3 class="shop-name">SR Furniture World</h3>
+      <p class="shop-address"><strong>Address:</strong> NO, 358/2, Tindivanam Rd, Thenarasampattu, Tiruvannamalai, Tamil Nadu 606611</p>
+      <p class="shop-hours":><strong>Hours:</strong> 9:30 am–9:30 pm</p>
+      <p class="map link"><a href="https://www.google.com/maps/place/S+R+FURNITURE+WORLD/@12.2369513,79.1064506,17z/data=!3m1!4b1!4m6!3m5!1s0x3bacc14ce4217c67:0x1958dcf8007f176d!8m2!3d12.2369513!4d79.1090255!16s%2Fg%2F11f61q24pr?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+    </div>
+  </div>
+<!-- Royal Furniture -->
+<div class="shop">
+  <img src="royal_furniture.jpg" alt="Royal Furniture">
+  <div class="shop-info">
+    <h3 class="shop-name">Royal Furniture</h3>
+    <p class="shop-address"><strong>Address:</strong> No 9/31, Anna Salai, Mathalangulam, Tiruvannamalai, Tamil Nadu 606601</p>
+    <p class="shop-hours"><strong>Hours:</strong> 9:30 am–8:30 pm</p>
+    <p class="map-link"><a href="https://www.google.com/maps/place/Royal+Furniture/@12.2299364,79.0670884,16z/data=!4m10!1m2!2m1!1s+Royal+Furniture.+Address:+No+9%2F31,+Anna+Salai,+Mathalangulam,+Tiruvannamalai,+Tamil+Nadu+606601!3m6!1s0x3bacc08e24f63655:0x1e1056493b4c254a!8m2!3d12.234436!4d79.0736917!15sCl9Sb3lhbCBGdXJuaXR1cmUuIEFkZHJlc3M6IE5vIDkvMzEsIEFubmEgU2FsYWksIE1hdGhhbGFuZ3VsYW0sIFRpcnV2YW5uYW1hbGFpLCBUYW1pbCBOYWR1IDYwNjYwMVpbIllyb3lhbCBmdXJuaXR1cmUgYWRkcmVzcyBubyA5IDMxIGFubmEgc2FsYWkgbWF0aGFsYW5ndWxhbSB0aXJ1dmFubmFtYWxhaSB0YW1pbCBuYWR1IDYwNjYwMZIBCnNvZmFfc3RvcmXgAQA!16s%2Fg%2F11j4svxzcf?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+  </div>
+</div>
+
+
+
+<!-- P. Thiruvaranga Mudaliyar Enterprises -->
+<div class="shop">
+  <img src="thiruvaranga_enterprises.jpg" alt="P. Thiruvaranga Mudaliyar Enterprises">
+  <div class="shop-info">
+    <h3 class="shop-name">P. Thiruvaranga Mudaliyar Enterprises</h3>
+    <p class="shop-address"><strong>Address:</strong> Acharapaakkam road, Vandavasi, Tiruvannamalai - 604408 (Vandavasi)</p>
+    <p class="shop-hours"><strong>Hours:</strong> 9:00 am - 9:00 pm</p>
+    <p class="map-link"><a href="https://www.google.com/maps/place/Thyagi+Thiruvaranga+Mudaliyar+Enterprises(Wholesale+and+Retail+Mat+Merchant+Since+1942)-+%E0%AE%95%E0%AF%8B%E0%AE%B0%E0%AF%88%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%BE%E0%AE%AF%E0%AF%8D+%E0%AE%AE%E0%AE%A3%E0%AF%8D%E0%AE%9F%E0%AE%BF/@12.5046013,79.6022422,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5325d3463f22a5:0x2749f8ca73d0f11b!8m2!3d12.5046013!4d79.6048171!16s%2Fg%2F11c61t3c65?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+  </div>
+</div>
+
+<!-- Durai Electronics -->
+<div class="shop">
+  <img src="durai_electronics.jpg" alt="Durai Electronics">
+  <div class="shop-info">
+    <h3 class="shop-name">Durai Electronics</h3>
+    <p class="shop-address"><strong>Address:</strong> Thendral Nagar, Vengikkal, Tiruvannamalai - 606604</p>
+    <p class="shop-hours"><strong>Hours:</strong> 10:00 am - 8:00 pm</p>
+    <p class="map-link"><a href="https://www.google.com/maps/place/Durai+Electronics/@12.2526128,79.069286,17z/data=!3m1!4b1!4m6!3m5!1s0x3bacc0f0973e249d:0xbf110f1be83e7d0b!8m2!3d12.2526128!4d79.0718609!16s%2Fg%2F11d_7hdhdp?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+  </div>
+</div>
+
+<!-- Kothandam Electronics -->
+<div class="shop">
+  <img src="kothandam_electronics.jpg" alt="Kothandam Electronics">
+  <div class="shop-info">
+    <h3 class="shop-name">Kothandam Electronics</h3>
+    <p class="shop-address"><strong>Address:</strong> 161/3, Car Street, Pavazhakundur, Tiruvannamalai - 606601</p>
+    <p class="shop-hours"><strong>Hours:</strong> 10:00 am - 8:00 pm</p>
+    <p class="map-link"><a href="https://www.google.com/maps/place/Kothandam+Electronics/@12.2323672,79.0683273,17z/data=!3m1!4b1!4m6!3m5!1s0x3bacc08f2526b563:0x9cdc344d6fc7b407!8m2!3d12.2323672!4d79.0709022!16s%2Fg%2F11f3jtsffm?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+  </div>
+</div>
+
+<!-- Annai Electronic Furniture -->
+<div class="shop">
+  <img src="annai_furniture.jpg" alt="Annai Electronic Furniture">
+  <div class="shop-info">
+    <h3 class="shop-name">Annai Electronic Furniture</h3>
+    <p class="shop-address"><strong>Address:</strong> Avalurpet Road, Mathalangulam, Tiruvannamalai - 606601</p>
+    <p class="shop-hours"><strong>Hours:</strong> 10:00 am - 8:00 pm</p>
+    <p class="map-link"><a href="https://www.google.com/maps/place/Annai+Stores/@12.2410352,79.0725855,15z/data=!4m10!1m2!2m1!1sAnnai+Electronic+Furniture+Address:+Avalurpet+Road,+Mathalangulam.+Tiruvannamalai+-+606601+(Tamil+Nadu)+India!3m6!1s0x3bacc1e8777b444f:0xad22b3b4b2c713f1!8m2!3d12.2373418!4d79.0922889!15sCm1Bbm5haSBFbGVjdHJvbmljIEZ1cm5pdHVyZSBXYXJlIGFuZCBGcm9tIEJhbGxhcmF3YXZpbGxh!16s%2Fg%2F11bf77gt9x?entry=ttu&g_ep=EgoyMDI0MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">View on Map</a></p>
+  </div>
+</div>
+
+</section>
+ <div class="footer">
+  <ul class="footer-links">
+    <li><a href="#about-us">About Us</a></li>
+    <li><a href="#terms">Terms and Conditions</a></li>
+    <li><a href="#privacy">Privacy Policy</a></li>
+  </ul>
+  <p class="copyright">© 2024 All Rights Reserved</p>
+  <a href="#top" class="back-to-top">Back to Top</a>
+</div>
+
+      
+
+
+    <!-- JavaScript to Handle Show More Button -->
+    <script>
+        function showMore(sectionId) {
+            var moreContent = document.getElementById(sectionId);
+            if (moreContent.classList.contains('hide')) {
+                moreContent.classList.remove('hide');
+                event.target.innerText = 'Show Less';
+            } else {
+                moreContent.classList.add('hide');
+                event.target.innerText = 'Show More';
+            }
+        }
+    </script>
+    <script>
+        const text = "Your One-Stop Guide to the Finest Restaurants, Temples, Supermarkets, and More!";
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                document.getElementById("typing-effect").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
+            }
+        }
+
+        window.onload = type;
+    </script>
+
+
+</body>
+</html>
